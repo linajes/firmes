@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dinfut | El dinero de un negocio pequeño, en dos registros</title>
+<meta name="description" content="Diez apartados sobre el dinero de un negocio pequeño, escritos dos veces: en registro llano y en registro técnico, con el mismo valor informativo. Portal informativo.">
+<link rel="canonical" href="https://dinfut.blog/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="dinfut">
+<meta property="og:title" content="Qué le pasa al dinero de un negocio pequeño entre que entra y que se va">
+<meta property="og:description" content="Diez apartados sobre el dinero de un negocio pequeño, escritos dos veces: en registro llano y en registro técnico, con el mismo valor informativo. Portal informativo.">
+<meta property="og:url" content="https://dinfut.blog/">
+<meta property="og:locale" content="es_AR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Faustina:wght@400;500;600&display=swap">
+<style>
+:root{
+--fondo:#F4F3EF;
+--lamina:#FFFFFF;
+--tinta:#15171B;
+--media:#585E66;
+--filete:#DAD8D2;
+--llano:#3F6B52;
+--tecnico:#39527E;
+--atencion:#9E5321;
+--estructura:var(--llano);
+--cab:7rem;
+}
+@supports selector(:has(*)){
+:root:has(#r-tecnico:checked,#b-tecnico:checked){--estructura:var(--tecnico)}
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:var(--cab);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fondo);color:var(--tinta);font-family:"Archivo",system-ui,sans-serif;font-size:1rem;line-height:1.5}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+a{color:var(--tinta);text-decoration:underline;text-underline-offset:.18em;text-decoration-thickness:1px;outline:0 solid var(--estructura);outline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline-width:3px}
+input.sr:focus-visible+label{outline:3px solid var(--estructura);outline-offset:2px}
+.salto{position:absolute;left:1rem;top:-4rem;background:var(--lamina);padding:.6rem 1rem;border:2px solid var(--estructura);z-index:30}
+.salto:focus{top:.5rem}
+.cab{position:sticky;top:0;z-index:20;background:var(--lamina);border-bottom:1px solid var(--filete)}
+.cab-in{max-width:68rem;margin:0 auto;padding:.5rem 1rem;display:flex;flex-wrap:wrap;align-items:center;gap:.25rem 1.5rem}
+.marca-sitio{font-weight:700;font-size:1.125rem;text-decoration:none;color:var(--tinta)}
+#menu-btn{display:none;margin-left:auto;font:inherit;font-weight:600;background:var(--lamina);color:var(--tinta);border:1px solid var(--media);padding:.45rem .9rem;min-height:2.5rem;cursor:pointer}
+.menu{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;font-size:.9375rem}
+.menu a{display:inline-block;padding:.35rem 0;text-decoration:none}
+.menu a:hover{text-decoration:underline}
+.bar{border-top:1px solid var(--filete);background:var(--fondo)}
+.bar-in{max-width:68rem;margin:0 auto;padding:.3rem 1rem;display:flex;align-items:center;gap:.75rem}
+.bar-tit{font-size:.8125rem;color:var(--media);white-space:nowrap}
+.conm{display:none;border:0;margin:0;padding:0;min-width:0}
+.conm legend{padding:0;font-size:.875rem;color:var(--media)}
+.op-grupo{display:flex;gap:0;border:1px solid var(--estructura)}
+.op-grupo label{display:flex;align-items:center;justify-content:center;flex:1 1 0;min-height:2.25rem;padding:.25rem 1.1rem;font-weight:600;font-size:.9375rem;cursor:pointer;background:var(--lamina);color:var(--tinta);text-align:center}
+.op-grupo label+input+label{border-left:1px solid var(--estructura)}
+@supports selector(:has(*)){
+.conm{display:block}
+.bar .conm{flex:1 1 auto;max-width:26rem}
+.apertura .conm{max-width:26rem;margin:1.5rem 0}
+:root:has(#r-llano:checked,#b-llano:checked) .op-l,
+:root:has(#r-tecnico:checked,#b-tecnico:checked) .op-t{background:var(--estructura);color:var(--lamina)}
+}
+main{display:block}
+.pagina{max-width:46rem;margin:0 auto;padding-inline:1rem}
+.lamina{background:var(--lamina);border-top:1px solid var(--filete);border-bottom:1px solid var(--filete);padding:2.5rem 1.5rem;margin:2rem 0}
+h1,h2,h3,h4{line-height:1.2;margin:0 0 .75rem}
+h1{font-size:clamp(1.75rem,4.5vw,2.5rem);font-weight:700;margin-bottom:1rem}
+h2{font-size:clamp(1.4rem,3.2vw,1.75rem);font-weight:700;margin-bottom:1rem}
+h3{font-size:1.25rem;font-weight:700}
+h4{font-size:.9375rem;font-weight:600;color:var(--media);margin:1.5rem 0 .5rem}
+p{margin:0 0 1em}
+.apertura{padding-block:2.5rem 1rem}
+.apertura .aviso{border-left:3px solid var(--media);padding-left:1rem;color:var(--media)}
+.apertura figure{margin:2rem 0}
+.motivo{overflow-x:auto;border-top:1px solid var(--filete);border-bottom:1px solid var(--filete);background:var(--lamina)}
+.motivo svg{display:block;width:100%;min-width:44rem;height:auto}
+figcaption{font-size:.875rem;color:var(--media);margin-top:.5rem}
+.nota{font-size:.9375rem;color:var(--media)}
+.lin{fill:none;stroke:var(--tinta);stroke-linecap:butt;stroke-linejoin:round}
+.ram{fill:none;stroke:var(--media);stroke-linecap:butt}
+.ram-a{fill:none;stroke:var(--atencion);stroke-linecap:butt}
+.trz{stroke-dasharray:6 5}
+.pto{fill:var(--tinta)}
+.pto-a{fill:var(--atencion)}
+.rot-s{font-family:"Archivo",system-ui,sans-serif;font-size:14px;fill:var(--tinta)}
+.rot-a{font-family:"Archivo",system-ui,sans-serif;font-size:14px;font-weight:700;fill:var(--atencion)}
+.rot-m{font-family:"Archivo",system-ui,sans-serif;font-size:12px;fill:var(--media)}
+.marca-atencion{border-left:4px solid var(--atencion);padding:.25rem 0 .25rem 1rem;margin:0 0 1.5rem;font-weight:600}
+article[data-registro]{margin:0 auto}
+article[data-registro="llano"]{--estructura:var(--llano);font-family:"Faustina",Georgia,serif;font-size:1.25rem;line-height:1.75;max-width:64ch}
+article[data-registro="tecnico"]{--estructura:var(--tecnico);font-family:"Archivo",system-ui,sans-serif;font-size:1rem;line-height:1.5;max-width:58ch}
+article[data-registro]+article[data-registro]{margin-top:3rem}
+article[data-registro]::before{content:"";display:block;background:var(--estructura)}
+article[data-registro="llano"]::before{width:4rem;height:4px;margin-bottom:1.25rem}
+article[data-registro="tecnico"]::before{width:100%;height:2px;margin-bottom:1rem}
+article[data-registro] h3{color:var(--estructura)}
+article[data-registro="llano"] h3{font-size:1.75rem;line-height:1.25;font-weight:600}
+article[data-registro="tecnico"] h3{font-size:1.3125rem;font-weight:700}
+article[data-registro] h3 .reg{display:block;font-family:"Archivo",system-ui,sans-serif;font-size:.8125rem;font-weight:500;color:var(--media);margin-bottom:.35rem}
+article[data-registro] h4{font-family:"Archivo",system-ui,sans-serif;padding-top:.6rem}
+article[data-registro="llano"] h4{border-top:1px solid var(--filete);margin-top:2rem}
+article[data-registro="tecnico"] h4{border-top:2px solid var(--estructura);margin-top:1.5rem}
+article[data-registro="llano"] p{margin-bottom:1.4em}
+article[data-registro="tecnico"] p{margin-bottom:.9em}
+article[data-registro] ul{margin:0 0 1em;padding:0 0 0 1.25rem}
+article[data-registro="llano"] li{margin-bottom:.7em}
+article[data-registro="tecnico"] ul{list-style:none;padding:0}
+article[data-registro="tecnico"] li{padding-left:1.5rem;text-indent:-1.5rem;margin-bottom:.4em}
+article[data-registro="tecnico"] li::before{content:"\2013";display:inline-block;width:1.5rem;text-indent:0;color:var(--estructura)}
+table{width:100%;border-collapse:collapse;font-size:1rem}
+caption{text-align:left;font-weight:600;padding-bottom:.75rem}
+th,td{text-align:left;padding:.6rem .75rem;border-bottom:1px solid var(--filete);vertical-align:top}
+thead th{border-bottom:2px solid var(--filete);color:var(--media);font-weight:600}
+tbody th{font-weight:400}
+dl.ficha{margin:0}
+dl.ficha div{display:grid;grid-template-columns:minmax(9rem,13rem) 1fr;gap:.25rem 1rem;padding:.55rem 0;border-bottom:1px solid var(--filete)}
+dl.ficha dt{color:var(--media);font-size:.9375rem}
+dl.ficha dd{margin:0;overflow-wrap:anywhere}
+.fechas{color:var(--media);font-size:.9375rem;border-top:1px solid var(--filete);padding-top:1rem}
+form{display:grid;gap:1rem;margin-top:1.5rem}
+label.campo{display:block;font-weight:600;margin-bottom:.3rem}
+input[type=text],input[type=email],textarea{width:100%;font:inherit;color:var(--tinta);background:var(--lamina);border:1px solid var(--media);padding:.6rem .75rem;min-height:2.75rem;outline:0 solid var(--estructura);outline-offset:2px}
+textarea{min-height:8rem;resize:vertical}
+.error{color:var(--atencion);font-size:.9375rem;margin:.3rem 0 0;min-height:0}
+button.accion{font:inherit;font-weight:600;background:var(--estructura);color:var(--lamina);border:1px solid var(--estructura);padding:.65rem 1.4rem;min-height:2.75rem;cursor:pointer;justify-self:start;outline:0 solid var(--estructura);outline-offset:3px}
+.antiphishing{border-left:3px solid var(--media);padding-left:1rem;font-size:.9375rem;color:var(--media)}
+details{border-top:1px solid var(--filete)}
+details:last-of-type{border-bottom:1px solid var(--filete)}
+summary{cursor:pointer;font-weight:600;font-size:1.0625rem;padding:.9rem .25rem;outline:0 solid var(--estructura);outline-offset:2px}
+details[open]>summary{border-bottom:1px solid var(--filete)}
+details .doc{padding:1rem .25rem 1.5rem;font-size:1rem}
+details .doc h3{font-size:1.0625rem;margin:1.25rem 0 .4rem}
+details .doc ul{padding-left:1.25rem}
+.pie{border-top:1px solid var(--filete);margin-top:3rem;padding:2rem 1rem 3rem;font-size:.9375rem}
+.pie-in{max-width:46rem;margin:0 auto}
+.pie dl{margin:0 0 1.25rem}
+.pie dl div{display:flex;flex-wrap:wrap;gap:.25rem 1rem;padding:.2rem 0}
+.pie dt{color:var(--media);min-width:11rem}
+.pie dd{margin:0;overflow-wrap:anywhere}
+.pie ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.25rem 1.25rem}
+.cookies{position:fixed;left:0;right:0;bottom:0;z-index:25;background:var(--lamina);border-top:2px solid var(--estructura);padding:1rem;opacity:0;visibility:hidden}
+.cookies.on{opacity:1;visibility:visible}
+.cookies-in{max-width:46rem;margin:0 auto;display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;align-items:center}
+.cookies p{flex:1 1 20rem;margin:0;font-size:.9375rem}
+.cookies-bt{display:flex;gap:.75rem}
+@media (max-width:48rem){
+:root{--cab:8.5rem}
+.js #menu-btn{display:inline-block}
+.js .menu{display:none;flex-basis:100%;flex-direction:column;gap:0;padding:.25rem 0 .5rem}
+.js .menu.abierto{display:flex}
+.js .menu a{display:block;padding:.65rem 0;border-top:1px solid var(--filete)}
+.bar-tit{display:none}
+.bar .conm{max-width:none;flex:1 1 100%}
+.bar .op-grupo{width:100%}
+.lamina{padding:2rem 1rem}
+dl.ficha div{grid-template-columns:1fr}
+.pie dt{min-width:0;flex-basis:100%}
+}
+@media (prefers-reduced-motion:no-preference){
+a,button,summary,input,textarea{transition:outline-width 150ms,background-color 150ms,color 150ms}
+details[open]>summary,.cookies{transition:opacity 200ms,visibility 200ms,border-color 200ms}
+.op-grupo label{transition:none}
+}
+@media screen{
+@supports selector(:has(*)){
+:root:has(#r-llano:checked,#b-llano:checked) article[data-registro="tecnico"],
+:root:has(#r-tecnico:checked,#b-tecnico:checked) article[data-registro="llano"]{display:none}
+}
+}
+@media print{
+.cab,.cookies,.conm,.salto{display:none}
+body{background:var(--lamina);font-size:11pt}
+.lamina{border:0;padding:1rem 0;margin:1rem 0}
+article[data-registro]{break-inside:auto}
+summary{break-after:avoid}
+a{text-decoration:none}
+}
+@media print{
+details::details-content{content-visibility:visible;display:block}
+}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebSite",
+   "@id": "https://dinfut.blog/#sitio",
+   "url": "https://dinfut.blog/",
+   "name": "dinfut",
+   "description": "Diez apartados sobre el dinero de un negocio pequeño, escritos dos veces: en registro llano y en registro técnico, con el mismo valor informativo. Portal informativo.",
+   "inLanguage": "es-AR",
+   "publisher": {
+    "@id": "https://dinfut.blog/#organizacion"
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://dinfut.blog/#titular",
+   "name": "DANIEL EBERTO RAMIREZ RODRIGUEZ",
+   "email": "soporte@dinfut.blog",
+   "telephone": "+54 11 4374-1730",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Corrientes 1669",
+    "postalCode": "C1042AAC",
+    "addressLocality": "Ciudad Autónoma de Buenos Aires",
+    "addressCountry": "AR"
+   }
+  },
+  {
+   "@type": "EducationalOrganization",
+   "@id": "https://dinfut.blog/#organizacion",
+   "name": "dinfut",
+   "url": "https://dinfut.blog/",
+   "email": "soporte@dinfut.blog",
+   "telephone": "+54 11 4374-1730",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Corrientes 1669",
+    "postalCode": "C1042AAC",
+    "addressLocality": "Ciudad Autónoma de Buenos Aires",
+    "addressCountry": "AR"
+   },
+   "founder": {
+    "@id": "https://dinfut.blog/#titular"
+   }
+  },
+  {
+   "@type": "Article",
+   "@id": "https://dinfut.blog/#cierre",
+   "headline": "Las diez formas en que el dinero de un negocio no está donde parece",
+   "author": {
+    "@id": "https://dinfut.blog/#titular"
+   },
+   "publisher": {
+    "@id": "https://dinfut.blog/#organizacion"
+   },
+   "datePublished": "2026-10-15",
+   "dateModified": "2026-10-15",
+   "inLanguage": "es-AR",
+   "mainEntityOfPage": "https://dinfut.blog/#cierre",
+   "isPartOf": {
+    "@id": "https://dinfut.blog/#sitio"
+   }
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<header class="cab">
+<div class="cab-in">
+<a class="marca-sitio" href="#inicio">dinfut</a>
+<button type="button" id="menu-btn" aria-expanded="false" aria-controls="menu">Menú</button>
+<nav aria-label="Principal"><ul class="menu" id="menu"><li><a href="#inicio">Inicio</a></li><li><a href="#apartados">Los diez apartados</a></li><li><a href="#registros">Sobre los dos registros</a></li><li><a href="#nosotros">Nosotros</a></li><li><a href="#politicas">Políticas</a></li><li><a href="#contacto">Contacto</a></li></ul></nav>
+</div>
+<div class="bar"><div class="bar-in"><span class="bar-tit">Registro de lectura</span><fieldset class="conm"><legend class="sr">Registro de lectura (barra superior)</legend><div class="op-grupo"><input class="sr" type="radio" name="registro" id="b-llano" value="llano"><label class="op-l" for="b-llano">Llano</label><input class="sr" type="radio" name="registro" id="b-tecnico" value="tecnico"><label class="op-t" for="b-tecnico">Técnico</label></div></fieldset></div></div>
+</header>
+<main id="contenido" class="pagina">
+<section id="inicio" class="apertura" aria-labelledby="t-inicio">
+<h1 id="t-inicio">Qué le pasa al dinero de un negocio pequeño entre que entra y que se va</h1>
+<p>Los diez apartados de este sitio están escritos dos veces: en un registro llano, con palabras de todos los días, y en un registro técnico, con la terminología de la administración. Cubren los mismos puntos y tienen el mismo valor informativo.</p>
+<p class="aviso">Aviso: este portal es solo informativo. Su contenido es general, no constituye asesoría de ningún tipo y no reemplaza la consulta con un contador público o profesional habilitado.</p>
+<figure>
+<div class="motivo" role="region" aria-label="Motivo gráfico: recorrido del dinero (se desplaza en pantallas angostas)" tabindex="0">
+<svg viewBox="0 0 840 360" role="img" aria-labelledby="svg-title svg-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="svg-title">Recorrido del dinero por un negocio pequeño</title>
+<desc id="svg-desc">Una línea ancha entra por la izquierda y sale por la derecha cada vez más delgada. De ella parten diez derivaciones rotuladas, una por apartado, donde el dinero se detiene, se compromete o se pierde de vista. La derivación del apartado donde más gente se equivoca está rotulada y marcada con el color de atención.</desc>
+<text class="rot-m" x="6" y="158">entra</text><text class="rot-m" x="834" y="158" text-anchor="end">sale</text>
+<line class="lin" x1="0" y1="180" x2="70" y2="180" stroke-width="16.0"/>
+<line class="lin" x1="70" y1="180" x2="140" y2="180" stroke-width="14.8"/>
+<line class="lin" x1="140" y1="180" x2="210" y2="180" stroke-width="13.6"/>
+<line class="lin" x1="210" y1="180" x2="280" y2="180" stroke-width="12.4"/>
+<line class="lin" x1="280" y1="180" x2="350" y2="180" stroke-width="11.2"/>
+<line class="lin" x1="350" y1="180" x2="420" y2="180" stroke-width="10.0"/>
+<line class="lin" x1="420" y1="180" x2="490" y2="180" stroke-width="8.8"/>
+<line class="lin" x1="490" y1="180" x2="560" y2="180" stroke-width="7.6"/>
+<line class="lin" x1="560" y1="180" x2="630" y2="180" stroke-width="6.4"/>
+<line class="lin" x1="630" y1="180" x2="700" y2="180" stroke-width="5.2"/>
+<line class="lin" x1="700" y1="180" x2="840" y2="180" stroke-width="4.0"/>
+<path class="ram" d="M 70 180 C 74 145 92 125 104 90" stroke-width="6.4"/>
+<line class="ram" x1="94" y1="90" x2="114" y2="90" stroke-width="3"/>
+<text class="rot-s" x="104" y="76" text-anchor="middle">Por llegar</text>
+<path class="ram-a" d="M 140 180 C 144 215 162 235 174 270" stroke-width="5.9"/>
+<circle class="pto-a" cx="174" cy="270" r="5"/>
+<text class="rot-a" x="174" y="298" text-anchor="middle">Ajeno<tspan class="rot-a" x="174" dy="16">donde más se confunde</tspan></text>
+<path class="ram" d="M 210 180 C 214 145 232 125 244 90" stroke-width="5.4"/>
+<circle class="pto" cx="244" cy="90" r="5"/>
+<text class="rot-s" x="244" y="76" text-anchor="middle">Comprometido</text>
+<path class="ram" d="M 280 180 C 284 215 302 235 314 270" stroke-width="5.0"/>
+<line class="ram" x1="304" y1="270" x2="324" y2="270" stroke-width="3"/>
+<text class="rot-s" x="314" y="298" text-anchor="middle">Inmovilizado</text>
+<path class="ram" d="M 350 180 C 354 145 372 125 384 90" stroke-width="4.5"/>
+<line class="ram trz" x1="384" y1="90" x2="384" y2="62" stroke-width="4.5"/>
+<text class="rot-s" x="384" y="48" text-anchor="middle">Automático</text>
+<path class="ram" d="M 420 180 C 424 215 442 235 454 270" stroke-width="4.0"/>
+<line class="ram trz" x1="454" y1="270" x2="454" y2="298" stroke-width="4.0"/>
+<text class="rot-s" x="454" y="326" text-anchor="middle">Puerta de atrás</text>
+<path class="ram" d="M 490 180 C 494 145 512 125 524 90" stroke-width="3.5"/>
+<line class="ram" x1="514" y1="90" x2="534" y2="90" stroke-width="3"/>
+<text class="rot-s" x="524" y="76" text-anchor="middle">Repuesto</text>
+<path class="ram" d="M 560 180 C 564 215 582 235 594 270" stroke-width="3.0"/>
+<line class="ram trz" x1="594" y1="270" x2="594" y2="298" stroke-width="3.0"/>
+<text class="rot-s" x="594" y="326" text-anchor="middle">Esperado</text>
+<path class="ram" d="M 630 180 C 634 145 652 125 664 90" stroke-width="2.6"/>
+<circle class="pto" cx="664" cy="90" r="5"/>
+<text class="rot-s" x="664" y="76" text-anchor="middle">Sobrante</text>
+<path class="ram" d="M 700 180 C 704 215 722 235 734 270" stroke-width="2.1"/>
+<line class="ram" x1="724" y1="270" x2="744" y2="270" stroke-width="3"/>
+<text class="rot-s" x="734" y="298" text-anchor="middle">Mes siguiente</text>
+</svg>
+</div>
+<figcaption>El dinero entra por la izquierda y sale por la derecha; la línea se adelgaza en cada derivación. Barra: el dinero se detiene. Círculo: queda comprometido. Línea de trazos: se pierde de vista. La derivación en color de atención corresponde al apartado donde más gente se equivoca.</figcaption>
+</figure>
+<fieldset class="conm"><legend>Elegir registro de lectura</legend><div class="op-grupo"><input class="sr" type="radio" name="registro" id="r-llano" value="llano" checked><label class="op-l" for="r-llano">Llano</label><input class="sr" type="radio" name="registro" id="r-tecnico" value="tecnico"><label class="op-t" for="r-tecnico">Técnico</label></div></fieldset>
+<p class="nota">El registro llano conviene a quien prefiere ejemplos de todos los días; el técnico, a quien ya maneja el vocabulario de la administración. El glosario puente permite pasar de uno a otro.</p>
+</section>
+<section id="registros" class="lamina" aria-labelledby="t-registros">
+<h2 id="t-registros">Sobre los dos registros</h2>
+<p>Este sitio publica una sola explicación del dinero de un negocio pequeño, pero la escribe dos veces. La primera usa palabras de todos los días, frases cortas y escenas conocidas: la caja, el cuaderno, el mostrador. La segunda usa la terminología de la administración y da por sentado que quien lee la conoce. Los dos textos tratan los mismos diez puntos, en el mismo orden y con una extensión casi igual. Ninguno es un resumen del otro, y ninguno es una ampliación.</p>
+<p>La razón de esta duplicación es práctica. Una misma idea puede entenderse con rapidez en una lengua y con dificultad en otra, aunque ambas pertenezcan al mismo idioma. Quien trabaja en un taller o en un puesto de venta suele manejar conceptos económicos con soltura, pero con otro vocabulario que el de los manuales. Quien estudió administración suele hacer lo contrario. Publicar un solo texto obliga a uno de los dos lectores a traducir por su cuenta. Publicar dos permite que cada uno lea en su propia lengua y, si lo desea, compare con la otra.</p>
+<p>Cada registro gana algo y pierde algo. El llano gana en cercanía y en claridad de las imágenes, pero pierde precisión: una palabra corriente suele abarcar más de un concepto, y eso deja zonas borrosas. El técnico gana en exactitud y en capacidad de ubicar cada idea dentro de un sistema de conceptos, pero pierde accesibilidad y puede dar la falsa impresión de que nombrar un fenómeno equivale a comprenderlo. Por eso se declara aquí, con todas las letras, que ambos registros tienen el mismo valor informativo.</p>
+<p>Tampoco debe pensarse que uno es la versión fácil y el otro la versión seria. Se escribieron por separado, sin traducir frase por frase, para que cada uno suene natural en su lengua. Para pasar de un registro al otro hay un glosario puente, con doce equivalencias entre la palabra corriente y el término técnico.</p>
+<p>El control de la parte superior permite elegir el registro y cambiarlo en cualquier momento sin perder el lugar de lectura. La elección se recuerda en el navegador de quien lee, y no se envía a ningún servidor. Todo el contenido es de carácter general, no constituye asesoría de ninguna clase y no reemplaza la consulta con un contador público o profesional habilitado.</p>
+</section>
+<section id="apartados" aria-labelledby="t-apartados">
+<h2 id="t-apartados">Los diez apartados</h2>
+<p class="nota">Cada apartado se muestra en el registro elegido; el otro sigue en la página y puede activarse en cualquier momento sin perder el lugar.</p>
+</section>
+<section id="a1" class="lamina" aria-labelledby="a1-l a1-t">
+<article data-registro="llano" aria-labelledby="a1-l">
+<h3 id="a1-l"><span class="reg">Registro llano</span><span class="sr">: </span>El dinero que todavía no llegó</h3>
+<h4>El planteo</h4>
+<p>Una venta hecha no es dinero en la caja. Entre el día en que se entrega algo y el día en que el pago aparece puede pasar una semana, un mes o más. Durante ese tiempo el negocio ya trabajó, ya gastó en materiales y ya anotó la venta, pero todavía no tiene el dinero. Este apartado cuenta qué es esa cifra que figura en los papeles y no en la mano.</p>
+<h4>El desarrollo</h4>
+<p>Cuando un negocio pequeño entrega un producto o termina un servicio y el cliente promete pagar después, nace una cifra que no se ve en ningún cajón. Existe en el cuaderno de ventas, en la factura emitida, en la libreta de fiados. Para quien lleva las cuentas esa cifra es real; para quien necesita comprar mercadería mañana, todavía no sirve de nada. La distancia entre una cosa y otra es el primer lugar donde el dinero se pierde de vista.</p>
+<p>Imaginemos, con números hipotéticos en base 100, un mes en que se vendieron 100 unidades de trabajo y solo 60 se cobraron dentro del mes. Las 40 restantes siguen siendo ventas, pero no pueden pagar sueldos ni alquileres. Además, parte de esas 40 puede llegar tarde, llegar incompleta o no llegar nunca. Cuanto más tarda un pago, más se parece a una esperanza y menos a un dinero. Por eso se distinguen tres cosas: lo vendido, lo cobrado y lo que falta cobrar. Son tres números distintos que casi nunca coinciden. El contenido de este sitio es general; el tratamiento formal de estos conceptos varía según la normativa vigente en el país y debe consultarse con un contador público o profesional habilitado.</p>
+<h4>Qué mirar</h4>
+<ul><li>Cuánto de lo vendido sigue sin cobrarse al cerrar el mes</li><li>Cuánto tiempo lleva esperando cada pago por llegar</li><li>Qué parte de lo que falta cobrar podría no llegar nunca</li></ul>
+</article>
+<article data-registro="tecnico" aria-labelledby="a1-t">
+<h3 id="a1-t"><span class="reg">Registro técnico</span><span class="sr">: </span>Cuentas por cobrar y ingreso devengado</h3>
+<h4>El planteo</h4>
+<p>El ingreso devengado y el ingreso percibido son magnitudes diferentes, y el intervalo que las separa se registra como cuentas por cobrar. En ese lapso la entidad reconoce el resultado de la operación sin haber obtenido liquidez. El apartado describe la naturaleza de ese saldo, su composición por antigüedad y el modo en que distorsiona la lectura de la tesorería disponible del período.</p>
+<h4>El desarrollo</h4>
+<p>Una operación a plazo genera un derecho de cobro que se reconoce en el momento en que se cumple la prestación, con independencia de la fecha de liquidación. Ese derecho integra el activo corriente como cuentas por cobrar y eleva el resultado sin elevar el efectivo. La brecha entre ambos conceptos es el rasgo característico de los esquemas de venta con plazo de pago informal, habituales en las unidades económicas de menor escala. La partida, además, no genera por sí misma liquidez alguna hasta que el deudor la cancela, de modo que el análisis de solvencia de corto plazo no puede apoyarse en ella sin ajustes.</p>
+<p>Tómese, con valores hipotéticos en base 100, un período con ingresos devengados por 100 unidades y cobranzas por 60. El saldo por cobrar de 40 representa una partida expuesta a vencimiento, a cobro parcial y a incobrabilidad. Su lectura exige el análisis de antigüedad por tramos y la estimación de una previsión sobre los saldos de recupero dudoso. Se distinguen así tres magnitudes: ingreso devengado, ingreso percibido y saldo no percibido, que rara vez se igualan. El contenido es de carácter general; el tratamiento formal de cada concepto depende de la normativa vigente en el país y corresponde consultarlo con un contador público o profesional habilitado. La rotación de este activo, expresada como plazo medio de cobranza, mide en días el lapso durante el cual la entidad sostiene el capital de trabajo de sus clientes.</p>
+<h4>Qué mirar</h4>
+<ul><li>Relación entre el saldo de cuentas por cobrar y el ingreso devengado del período</li><li>Distribución de los saldos según su antigüedad de vencimiento</li><li>Magnitud de la previsión por incobrabilidad sobre el saldo por cobrar</li></ul>
+</article>
+</section>
+<section id="a2" class="lamina" aria-labelledby="a2-l a2-t">
+<p class="marca-atencion">Apartado donde más gente se equivoca: el dinero ajeno y el propio llegan juntos y se confunden con facilidad.</p>
+<article data-registro="llano" aria-labelledby="a2-l">
+<h3 id="a2-l"><span class="reg">Registro llano</span><span class="sr">: </span>El dinero que llegó y no es del negocio</h3>
+<h4>El planteo</h4>
+<p>Por la caja pasa dinero que no pertenece al negocio. Una parte es de quien cobra los impuestos, otra es de un cliente que adelantó un pago por algo que aún no recibió, otra es de un tercero a quien se cobró en su nombre. Todo entra junto y se mezcla en un mismo lugar, y por eso este es el apartado donde la confusión resulta más frecuente. Aquí se explica cómo se ve y por qué engaña.</p>
+<h4>El desarrollo</h4>
+<p>Un cliente adelanta una parte del precio para reservar un pedido. El dinero entra, se ve en la caja, pero el trabajo todavía no se hizo. Mientras no se entregue lo prometido, esa suma funciona como una deuda: si el pedido se cancela, hay que devolverla. Algo parecido ocurre con los impuestos que se suman al precio de venta. El cliente los paga en el mostrador, pero el destinatario final es otro, y el negocio solo los guarda por un tiempo. También ocurre con lo que se descuenta del pago de los empleados para entregarlo después a terceros.</p>
+<p>Todo eso llega por la misma puerta que las ventas verdaderas y no trae etiqueta. Con números hipotéticos en base 100: si entran 100 en un día y 20 son ajenos, el dinero realmente disponible es 80. Quien mira solo el total cree tener 100. El error no es de mala fe; es de vista, porque el dinero ajeno y el propio se parecen en todo menos en su dueño. Cuanto más tiempo permanecen mezclados, más fácil resulta gastar lo que no correspondía. Por eso se habla de una cuenta mental separada para lo que solo está de paso. Este contenido es general. La forma de registrar y tratar estas sumas cambia según las reglas del país, y para eso corresponde acudir a un contador público o profesional habilitado.</p>
+<h4>Qué mirar</h4>
+<ul><li>Qué parte de lo que entró ya tiene dueño distinto del negocio</li><li>Si hay pagos adelantados por trabajos todavía no entregados</li><li>Cuánto tiempo permanece junto el dinero propio y el ajeno</li></ul>
+</article>
+<article data-registro="tecnico" aria-labelledby="a2-t">
+<h3 id="a2-t"><span class="reg">Registro técnico</span><span class="sr">: </span>Pasivos por cuenta de terceros y anticipos recibidos</h3>
+<h4>El planteo</h4>
+<p>No flujo de cobranzas confluyen importes que no constituyen ingreso de la entidad sino obligaciones hacia terceros: tributos percibidos, anticipos de clientes por prestaciones aún no cumplidas y sumas cobradas por mandato ajeno. La liquidez que generan es transitoria y se encuentra comprometida desde su origen. El apartado precisa su naturaleza de pasivo y la razón por la cual su mezcla con el efectivo propio induce a error de interpretación.</p>
+<h4>El desarrollo</h4>
+<p>Las sumas percibidas por cuenta y orden de terceros no integran el patrimonio neto de la entidad: se reconocen como pasivos corrientes desde el instante de su ingreso. Es el caso de los tributos trasladados en el precio, de las retenciones practicadas sobre remuneraciones y de los anticipos recibidos antes de cumplir la prestación, que originan un pasivo contractual hasta su devengamiento. Su cancelación se produce por entrega al acreedor, por cumplimiento o por restitución. Cada una de estas partidas posee un acreedor identificable y una fecha de exigibilidad, circunstancia que las distingue de los recursos de libre disposición.</p>
+<p>En términos hipotéticos de base 100, una cobranza diaria de 100 que contenga 20 de naturaleza fiduciaria arroja una disponibilidad genuina de 80. La lectura del saldo bancario o de caja sin discriminar componentes sobrestima el excedente operativo. La confusión no responde a omisión dolosa sino a la indistinción contable entre fondos propios y fondos de afectación específica, que comparten un mismo medio de cobro. Mientras permanezca sin segregar, el efectivo ajeno queda expuesto a aplicación indebida. El contenido es de carácter general; su tratamiento formal depende de la normativa vigente en el país y debe consultarse con un contador público o profesional habilitado. La práctica de reconocer el total ingresado como disponible traslada ese error a los períodos siguientes, cuando la obligación se vuelve exigible y el efectivo ya fue aplicado a otros usos.</p>
+<h4>Qué mirar</h4>
+<ul><li>Proporción del efectivo ingresado que corresponde a pasivos fiduciarios</li><li>Saldo de anticipos recibidos sin cumplimiento de la prestación</li><li>Grado de segregación entre fondos propios y fondos de afectación específica</li></ul>
+</article>
+</section>
+<section id="a3" class="lamina" aria-labelledby="a3-l a3-t">
+<article data-registro="llano" aria-labelledby="a3-l">
+<h3 id="a3-l"><span class="reg">Registro llano</span><span class="sr">: </span>El dinero que ya tiene destino antes de gastarse</h3>
+<h4>El planteo</h4>
+<p>Un saldo en la cuenta puede estar prometido mucho antes de salir. El alquiler del local, los pedidos hechos a proveedores, los sueldos del mes y los servicios que se pagan siempre en la misma fecha ya tienen nombre y apellido. El dinero sigue ahí, a la vista, pero ya no es libre. Este apartado muestra la diferencia entre lo que hay y lo que realmente queda para elegir.</p>
+<h4>El desarrollo</h4>
+<p>Hay gastos que no se deciden cada mes: simplemente ocurren. El alquiler llega a su fecha, los empleados cobran en la suya y los servicios de luz, agua o conexión a internet se renuevan solos. A esto se suman los pedidos hechos a proveedores, que se pagan al recibir la mercadería o poco después. Cada uno de esos compromisos se firmó, se habló o se aceptó en algún momento anterior. Cuando llega el día del pago, no hay nada que resolver: el dinero ya estaba reservado, aunque nadie lo hubiera separado en un sobre.</p>
+<p>Para ver la diferencia sirve un ejemplo hipotético en base 100. Si la cuenta muestra 100 y hay compromisos con vencimiento en los próximos diez días por 70, lo que queda para cualquier otro uso es 30. El número grande tranquiliza, pero el número chico describe la situación. Lo difícil es que los compromisos no aparecen en el saldo, y por eso la cuenta parece más holgada de lo que es. Cuanto más se pospone el repaso de lo comprometido, más sorprende cada vencimiento. El contenido es general; el modo formal de tratar estas partidas varía según la normativa vigente en el país y conviene verificarlo con un contador público o profesional habilitado.</p>
+<h4>Qué mirar</h4>
+<ul><li>Qué pagos fijos vencen en las próximas semanas</li><li>Cuánto de lo que hay en la cuenta ya está prometido</li><li>Qué pedidos a proveedores todavía no se pagaron</li></ul>
+</article>
+<article data-registro="tecnico" aria-labelledby="a3-t">
+<h3 id="a3-t"><span class="reg">Registro técnico</span><span class="sr">: </span>Compromisos asumidos y obligaciones de pago futuras</h3>
+<h4>El planteo</h4>
+<p>La liquidez disponible a una fecha dada no equivale a liquidez de libre disposición. Entre ambas media el conjunto de obligaciones ya contraídas y todavía no canceladas: arrendamientos, órdenes de compra emitidas, remuneraciones devengadas y servicios de pago periódico. El apartado analiza cómo se acumulan esos compromisos, cuándo se tornan exigibles y por qué el saldo bruto induce a una lectura optimista.</p>
+<h4>El desarrollo</h4>
+<p>Las obligaciones contractuales y las derivadas de relaciones permanentes generan egresos futuros de monto y fecha conocidos o estimables. Los contratos de locación, los compromisos de abastecimiento con proveedores, las remuneraciones y cargas asociadas, y los servicios de facturación recurrente constituyen un pasivo cierto o contingente cuyo vencimiento no depende de la voluntad de la gerencia. Su origen es anterior al desembolso, y por eso el flujo saliente de un período queda determinado, en buena parte, por decisiones ya adoptadas en períodos precedentes.</p>
+<p>Con cifras hipotéticas en base 100, un saldo de tesorería de 100 frente a vencimientos inmediatos de 70 deja un margen operativo neto de 30. La lectura del saldo sin deducir la cartera de compromisos próximos produce un indicador de liquidez sobrestimado, porque el pasivo exigible no figura en el extracto de la cuenta. El instrumento habitual para corregir esa distorsión es el calendario de vencimientos, que ordena las salidas por fecha y por grado de certeza. Cuanto más tarde se elabora, mayor es la brecha entre la percepción de holgura y la disponibilidad efectiva. Este contenido es de carácter general; su tratamiento formal depende de la normativa vigente en el país y debe consultarse con un contador público o profesional habilitado.</p>
+<h4>Qué mirar</h4>
+<ul><li>Importe de los vencimientos inmediatos frente al saldo de tesorería</li><li>Existencia de un calendario de vencimientos ordenado por fecha y certeza</li><li>Volumen de órdenes de compra emitidas y sin cancelar</li></ul>
+</article>
+</section>
+<section id="a4" class="lamina" aria-labelledby="a4-l a4-t">
+<article data-registro="llano" aria-labelledby="a4-l">
+<h3 id="a4-l"><span class="reg">Registro llano</span><span class="sr">: </span>El dinero que se convirtió en cosas</h3>
+<h4>El planteo</h4>
+<p>El dinero que se gasta en mercadería, herramientas o equipos no desaparece, pero deja de ser dinero. Se transforma en estantes llenos, máquinas y materiales guardados. Sigue formando parte del valor del negocio, aunque no sirve para pagar una factura de mañana. Este apartado explica por qué algo puede valer mucho y, a la vez, no alcanzar para ninguna necesidad inmediata de pago.</p>
+<h4>El desarrollo</h4>
+<p>Un comercio que compra más mercadería de la que vende en un mes convierte parte de su dinero en cajas apiladas. Un taller que adquiere una máquina nueva cambia efectivo por una herramienta que producirá durante años. En ambos casos el dinero sigue existiendo en forma de objeto, y en los libros el negocio parece igual de fuerte que antes. Pero un objeto no se entrega para pagar un alquiler. Para volver a ser dinero, la mercadería debe venderse y la máquina debe rendir, y ninguna de las dos cosas ocurre de un día para otro.</p>
+<p>Hay además una diferencia entre lo que se compra para revender y lo que se compra para usar. Lo primero vuelve a convertirse en dinero si la venta ocurre; lo segundo casi nunca, porque se queda en el negocio mientras funcione. En un ejemplo hipotético en base 100, si 60 de cada 100 recibidos se transformaron en objetos, solo 40 permanecen líquidos. Además, lo guardado puede envejecer, romperse, pasar de moda o perder valor antes de ser vendido. El contenido es general; el tratamiento formal de cada concepto varía según la normativa vigente en el país y debe consultarse con un contador público o profesional habilitado.</p>
+<h4>Qué mirar</h4>
+<ul><li>Cuánto dinero está guardado en mercadería que no se vende</li><li>Qué herramientas o equipos se usan poco o nada</li><li>Cuánto tarda cada producto en salir después de comprarse</li></ul>
+</article>
+<article data-registro="tecnico" aria-labelledby="a4-t">
+<h3 id="a4-t"><span class="reg">Registro técnico</span><span class="sr">: </span>Activos inmovilizados: bienes de cambio y bienes de uso</h3>
+<h4>El planteo</h4>
+<p>La conversión de efectivo en existencias, instalaciones o equipamiento transforma un activo líquido en otro de realización diferida. El valor patrimonial se conserva, pero la capacidad de cancelar obligaciones en el corto plazo disminuye. El apartado distingue los bienes destinados a la venta de los destinados al uso, y describe la tensión entre la riqueza registrada y la disponibilidad real de fondos.</p>
+<h4>El desarrollo</h4>
+<p>Las existencias y el equipamiento constituyen activos cuya realización exige un proceso previo. Los bienes de cambio se recuperan mediante la enajenación en el curso ordinario de la actividad; los bienes de uso, mediante la absorción gradual de su costo a través de la amortización. Ambas categorías retienen capital que, mientras permanece inmovilizado, no contribuye a la cobertura de los egresos corrientes, aunque el balance exhiba un patrimonio sólido.</p>
+<p>En un caso hipotético de base 100, si la aplicación de fondos a activos no corrientes y a stock asciende a 60, la porción de capital de trabajo efectivamente líquido se reduce a 40. A ello se agregan los riesgos propios de cada categoría: obsolescencia, deterioro físico, desvalorización de mercado y lenta rotación. Estos factores pueden obligar a reconocer pérdidas por valuación al cierre de ejercicio, de modo que el valor contable y el valor de recupero divergen con el tiempo. El análisis de la rotación de existencias complementa la lectura de la liquidez. El contenido es de carácter general; el tratamiento formal depende de la normativa vigente en el país y corresponde su consulta a un contador público o profesional habilitado. Esta desproporción entre valor registrado y liquidez es la que explica que una entidad con patrimonio creciente pueda enfrentar tensiones de caja.</p>
+<h4>Qué mirar</h4>
+<ul><li>Proporción del capital aplicada a existencias y a activos no corrientes</li><li>Índice de rotación de existencias en relación con el período de reposición</li><li>Diferencia entre el valor contable y el valor estimado de recupero</li></ul>
+</article>
+</section>
+<section id="a5" class="lamina" aria-labelledby="a5-l a5-t">
+<article data-registro="llano" aria-labelledby="a5-l">
+<h3 id="a5-l"><span class="reg">Registro llano</span><span class="sr">: </span>El dinero que se va sin que nadie lo decida</h3>
+<h4>El planteo</h4>
+<p>Algunos pagos se repiten solos, mes tras mes, sin que nadie los apruebe de nuevo. Una suscripción olvidada, una comisión que se descuenta en silencio, un cargo de mantenimiento que sube de a poco. Cada uno parece pequeño y ninguno llama la atención. Juntos, sin embargo, forman una salida constante de dinero. Este apartado describe cómo se acumulan y por qué cuesta verlos.</p>
+<h4>El desarrollo</h4>
+<p>Una decisión de gasto, en general, deja una huella: alguien la tomó, alguien pagó, alguien la anotó. Los pagos automáticos funcionan al revés. Se autorizan una sola vez y desde entonces se repiten sin que nadie vuelva a pensar en ellos. Pueden ser una herramienta digital que se renueva cada mes, una comisión que se descuenta de cada cobro electrónico, un cargo por mantener abierta una cuenta o un servicio contratado para una temporada que ya terminó. Como el importe de cada uno es chico, la costumbre es no revisarlo.</p>
+<p>La suma es lo que importa. En un ejemplo hipotético en base 100, diez cargos pequeños de 1 cada uno parecen ruido, pero equivalen a 10 por período, es decir, una décima parte del total. Y como se repiten, al cabo de un año su incidencia es mayor que el de muchos gastos grandes que sí se discutieron. Además, estos cargos suelen aumentar de a poco, de modo que el cambio no se nota de un mes al siguiente. Por eso lo habitual es que se descubran cuando alguien revisa el extracto con paciencia, y no antes. El contenido es general y las soluciones formales dependen de cada caso; no sustituye el análisis de un profesional habilitado.</p>
+<h4>Qué mirar</h4>
+<ul><li>Qué cobros se repiten solos cada mes sin haberse revisado</li><li>Qué servicios siguen activos aunque ya no se usen</li><li>Cuánto suman, en conjunto, los cargos más pequeños</li></ul>
+</article>
+<article data-registro="tecnico" aria-labelledby="a5-t">
+<h3 id="a5-t"><span class="reg">Registro técnico</span><span class="sr">: </span>Débitos automáticos y egresos recurrentes de bajo monto</h3>
+<h4>El planteo</h4>
+<p>Una fracción relevante de los egresos de una unidad económica pequeña se origina en débitos automáticos, comisiones por servicios de cobro y cargos periódicos de mantenimiento. Su importe unitario es reducido y su ocurrencia es regular, lo que les confiere baja visibilidad. El apartado examina su efecto acumulado, la dificultad de su detección y su incidencia sobre el margen del período.</p>
+<h4>El desarrollo</h4>
+<p>Los egresos de baja cuantía y alta periodicidad escapan al control presupuestario ordinario porque no requieren una nueva autorización por cada ocurrencia. Comprenden abonos de servicios de renovación automática, comisiones por procesamiento de cobranzas, gastos de mantenimiento de cuentas y abonos de utilidad residual. La ausencia de un acto decisorio recurrente los sustrae del circuito habitual de aprobación y de la atención de quien administra. Individualmente carecen de relevancia para la gerencia, pero, consideradas como categoría, conforman un costo fijo encubierto que se suma al nivel estructural de gastos sin haber sido presupuestado como tal.</p>
+<p>Tómese una hipótesis de base 100: diez erogaciones de 1 unidad cada una representan 10 por período, o sea, el diez por ciento del volumen de referencia. Por su carácter reiterado, el efecto anual supera con frecuencia al de partidas individuales de mayor importe pero ocasionales. A ello se suma la deriva tarifaria, es decir, el incremento gradual de importes que no genera ninguna señal contable inmediata. Su detección requiere una conciliación sistemática de los extractos contra los gastos autorizados. El contenido es de carácter general y su tratamiento formal admite variaciones; no reemplaza la revisión de un profesional habilitado en la materia. La frecuencia con que se renuevan hace que cualquier omisión de revisión se multiplique por el número de períodos transcurridos hasta su eventual cancelación.</p>
+<h4>Qué mirar</h4>
+<ul><li>Inventario de cargos de renovación automática vigentes y su utilidad actual</li><li>Evolución de las comisiones por cobranza como proporción de lo cobrado</li><li>Resultado de la conciliación entre extractos y gastos autorizados</li></ul>
+</article>
+</section>
+<!-- UNIDADES PUBLICITARIAS: insertar la unidad entre dos apartados completos, como en este punto (entre el quinto y el sexto), siempre fuera de los article de registro para que no se oculte al conmutar. Nunca dentro de un apartado, del glosario ni de los documentos legales. -->
+<section id="a6" class="lamina" aria-labelledby="a6-l a6-t">
+<article data-registro="llano" aria-labelledby="a6-l">
+<h3 id="a6-l"><span class="reg">Registro llano</span><span class="sr">: </span>El dinero que sale por la puerta de atrás</h3>
+<h4>El planteo</h4>
+<p>No todo el dinero que sale del negocio pasa por una factura. Hay salidas que nadie anotó: una compra personal hecha con la plata de la caja, un faltante que no se explica, un error al dar el vuelto, un descuento regalado sin avisar. Esa salida discreta no tiene fecha ni motivo escrito. Este apartado habla de ella sin culpar a nadie, solo para entender cómo se forma.</p>
+<h4>El desarrollo</h4>
+<p>En un negocio chico, la caja suele ser también el bolsillo de quien lo atiende. Cuando se saca dinero para un gasto de la casa y no se anota, el negocio queda con un faltante que, a fin de mes, nadie sabe de dónde vino. Algo parecido ocurre con la mercadería que se rompe, se vence o se regala a un conocido sin dejar constancia. También pasan los errores humanos: un vuelto mal calculado, una cuenta sumada de menos, un pago hecho dos veces. Nada de esto requiere mala intención. Basta con que falte el hábito de dejar marcado todo movimiento.</p>
+<p>Lo importante es entender el efecto. En un ejemplo hipotético en base 100, si entran 100 y las ventas registradas explican solo 92, hay 8 que se movieron sin dejar rastro. Ese 8 no se puede perseguir porque no se sabe qué es; apenas se nota como un hueco entre lo que debería haber y lo que hay. A veces el hueco crece despacio y se confunde con mala racha. Cuando una salida no tiene nombre, tampoco puede discutirse ni corregirse. Este contenido es general; no constituye diagnóstico alguno ni sustituye la intervención de un profesional habilitado. Casi siempre se descubre al intentar explicar un número que no cierra.</p>
+<h4>Qué mirar</h4>
+<ul><li>Qué diferencias de caja no tienen explicación escrita</li><li>Cuánta mercadería se pierde por rotura, vencimiento o regalo</li><li>Si el dinero personal y el del negocio se mezclan</li></ul>
+</article>
+<article data-registro="tecnico" aria-labelledby="a6-t">
+<h3 id="a6-t"><span class="reg">Registro técnico</span><span class="sr">: </span>Fugas de efectivo: retiros personales, mermas y errores sin registro</h3>
+<h4>El planteo</h4>
+<p>Existen egresos que no transitan por el circuito documental de la entidad: retiros de los titulares sin imputación, diferencias de caja no explicadas, mermas de mercadería y errores operativos en el manejo del efectivo. Su rasgo común es la ausencia de respaldo contemporáneo. El apartado describe su origen, sin imputar conductas a persona alguna, y explica por qué distorsionan el resultado.</p>
+<h4>El desarrollo</h4>
+<p>Las fugas de efectivo comprenden toda salida de recursos no respaldada por documentación ni imputada a una cuenta. Incluyen la disposición de fondos por parte de los titulares para fines ajenos a la actividad, las mermas físicas de existencias por deterioro o vencimiento, y los errores de cómputo, duplicación o entrega en operaciones de contado. Ninguna de estas categorías presupone conducta dolosa; todas comparten la ausencia de registro simultáneo con el hecho económico. Su efecto sobre la medición es doble: reducen el efectivo disponible y, al no registrarse, impiden determinar con exactitud el costo de las ventas realizadas en el período.</p>
+<p>En una hipótesis de base 100, si el ingreso de fondos asciende a 100 y las operaciones registradas lo explican en 92, resta una diferencia inexplicada de 8. La partida no admite análisis causal, porque carece de datos de origen, y solo se manifiesta como discrepancia entre el saldo teórico y el saldo verificado. Con el tiempo, el desvío puede incrementarse paulatinamente y resultar atribuido a factores coyunturales. Una pérdida sin identificar no puede cuantificarse con rigor ni reclasificarse. El contenido es de carácter general; no configura diagnóstico ni reemplaza la actuación de un profesional habilitado. En ausencia de arqueos periódicos, la corrección posterior resulta impracticable, pues no existen comprobantes sobre los cuales reconstruir las operaciones afectadas.</p>
+<h4>Qué mirar</h4>
+<ul><li>Magnitud de la discrepancia entre el saldo teórico y el saldo arqueado</li><li>Registro de mermas de existencias por causa y por período</li><li>Existencia de una imputación separada para los retiros de los titulares</li></ul>
+</article>
+</section>
+<section id="a7" class="lamina" aria-labelledby="a7-l a7-t">
+<article data-registro="llano" aria-labelledby="a7-l">
+<h3 id="a7-l"><span class="reg">Registro llano</span><span class="sr">: </span>El dinero que se repone y el que no vuelve</h3>
+<h4>El planteo</h4>
+<p>Una parte de lo que sale del negocio regresa, y otra parte no regresa jamás. La mercadería comprada vuelve a la caja cuando se vende; el gasto de luz de un mes ya no vuelve. Mezclar ambas cosas lleva a creer que todo el movimiento es un ir y venir. Este apartado separa las salidas que se recuperan de las que se consumen para siempre.</p>
+<h4>El desarrollo</h4>
+<p>Cuando se compra mercadería para vender, el dinero sale pero tiene camino de vuelta. Se transforma en producto, el producto se vende, y el dinero regresa, idealmente con algo más. Es un círculo que se repite y que sostiene la actividad. Otros gastos no tienen ese camino: el sueldo de un mes pagado, la factura de electricidad, el arreglo de una puerta. Ese dinero se usó para que el negocio funcionara, y una vez usado no regresa por su cuenta. Solo vuelve, de manera indirecta, si las ventas del mes alcanzaron para cubrirlo.</p>
+<p>La confusión aparece porque ambos tipos de salida se ven iguales en el extracto. En un ejemplo hipotético en base 100, de 100 que salen en un mes, 55 pueden ser reponibles y 45 consumidos. Quien mira solo el total cree que se gastó 100; en realidad, 55 están en camino de regresar y solo 45 se fueron para siempre. Pero la parte reponible tampoco regresa sola: necesita que la venta ocurra y que el pago llegue, y mientras tanto el dinero está fuera. Entender la proporción de cada tipo ayuda a leer qué ocurre con el saldo. El contenido es general; el tratamiento formal depende de la normativa vigente en el país y debe consultarse con un contador público o profesional habilitado.</p>
+<h4>Qué mirar</h4>
+<ul><li>Qué parte de lo gastado en el mes volverá en forma de venta</li><li>Qué parte se consumió y no tiene camino de regreso</li><li>Cuánto tiempo pasa entre la salida y el regreso del dinero</li></ul>
+</article>
+<article data-registro="tecnico" aria-labelledby="a7-t">
+<h3 id="a7-t"><span class="reg">Registro técnico</span><span class="sr">: </span>Recursos renovables y recursos consumidos en el ciclo operativo</h3>
+<h4>El planteo</h4>
+<p>Los egresos de una entidad se dividen en aquellos que se recomponen mediante el propio ciclo operativo y aquellos que se agotan en su consumo. Los primeros retornan en forma de cobranza con un margen; los segundos constituyen costos irrecuperables. El apartado delimita ambas categorías y explica por qué su confusión desdibuja la lectura del flujo. El análisis resulta indispensable para interpretar correctamente el flujo.</p>
+<h4>El desarrollo</h4>
+<p>El ciclo operativo de una unidad económica combina erogaciones que se reintegran con la realización de las ventas y erogaciones que se absorben definitivamente en el resultado. Las primeras, vinculadas con la adquisición de bienes destinados a la reventa o a la transformación, integran el capital de trabajo y se recomponen por medio de la cobranza. Las segundas, tales como remuneraciones, energía y mantenimiento, son costos del período sin recupero autónomo. La distinción es funcional y no depende de la naturaleza jurídica del desembolso, sino de la existencia o no de un mecanismo interno de recomposición.</p>
+<p>Bajo una hipótesis de base 100, un egreso total de 100 puede descomponerse en 55 de naturaleza recuperable y 45 de naturaleza consumible. El extracto bancario no discrimina esa composición, por lo que el flujo saliente luce uniforme. Sin embargo, el recupero de la fracción reponible está condicionado a la concreción de la venta y a la efectiva percepción, de manera que existe un desfase entre la salida y el reintegro. La proporción entre ambos componentes determina la presión que el ciclo ejerce sobre la tesorería. Este contenido es de carácter general; el tratamiento formal de cada concepto varía según la normativa vigente en el país y corresponde su consulta con un contador público o profesional habilitado. En consecuencia, un mismo nivel de egresos puede ejercer presiones muy diferentes según su composición.</p>
+<h4>Qué mirar</h4>
+<ul><li>Proporción del egreso total de naturaleza recuperable frente a consumible</li><li>Desfase temporal entre la erogación y su reintegro vía cobranza</li><li>Margen obtenido sobre los recursos que completaron el ciclo de recupero</li></ul>
+</article>
+</section>
+<section id="a8" class="lamina" aria-labelledby="a8-l a8-t">
+<article data-registro="llano" aria-labelledby="a8-l">
+<h3 id="a8-l"><span class="reg">Registro llano</span><span class="sr">: </span>El dinero que se espera y no llega</h3>
+<h4>El planteo</h4>
+<p>Hay dinero que nunca fue vendido ni facturado, y que sin embargo ya se cuenta como si existiera. Es la temporada que prometía mucho, el pedido grande que se mencionó de palabra, el cliente que dijo que volvería. Esa expectativa orienta decisiones, pero no figura en ningún registro. Este apartado trata sobre la distancia entre lo esperado y lo que finalmente ocurre.</p>
+<h4>El desarrollo</h4>
+<p>Casi todos los negocios hacen cuentas sobre un dinero que todavía no existe. Se estima que diciembre será un buen mes, que un cliente repetirá su compra, que un conocido enviará a otros. Son cálculos razonables, basados en lo que ocurrió antes o en una conversación amable. El problema es que ese dinero no está firmado ni facturado, y por lo tanto nadie puede reclamarlo si no aparece. Se comporta como una promesa que no tiene dueño.</p>
+<p>La distancia entre lo esperado y lo ocurrido puede medirse en un ejemplo hipotético de base 100. Si se contaba con ingresos por 100 y llegaron 70, faltan 30. Si, mientras tanto, los gastos se ajustaron a los 100 esperados, esa diferencia de 30 se cubre con otros fondos o queda sin cubrir. Lo notable es que la mala noticia no llega de golpe: se nota despacio, semana a semana, cuando la caja no acompaña lo previsto. Además, las expectativas tienden a ser más optimistas que los resultados, porque lo bueno se recuerda más que lo malo. Este contenido es general y no sustituye el análisis de un profesional habilitado para el caso concreto. Por eso las cuentas hechas sobre lo esperado necesitan revisarse cuando llegan los primeros datos reales del período.</p>
+<h4>Qué mirar</h4>
+<ul><li>Qué ingresos se dieron por hechos sin que existiera ninguna factura</li><li>Cuánto se alejó lo ocurrido de lo previsto en meses anteriores</li><li>En qué se apoyaban las expectativas de venta del período</li></ul>
+</article>
+<article data-registro="tecnico" aria-labelledby="a8-t">
+<h3 id="a8-t"><span class="reg">Registro técnico</span><span class="sr">: </span>Ingresos proyectados no concretados y desvío de expectativas</h3>
+<h4>El planteo</h4>
+<p>Las proyecciones de ingresos descansan sobre supuestos de demanda, estacionalidad y recurrencia que pueden no verificarse. A diferencia de las cuentas por cobrar, estos importes carecen de contraparte documental y de vínculo contractual. El apartado analiza el desvío entre lo proyectado y lo realizado, así como su repercusión sobre la planificación de egresos. El examen se limita a describir el fenómeno y no formula pronósticos.</p>
+<h4>El desarrollo</h4>
+<p>Los ingresos proyectados se construyen sobre series históricas, patrones estacionales y compromisos verbales que no configuran obligación exigible. No generan derecho de cobro ni encuentran reflejo en el activo, de modo que su incumplimiento no origina ningún asiento. La planificación de caja que los toma como dato firme incorpora un riesgo de estimación cuyo resultado sólo se revela con el transcurso del período. En la práctica, la frontera entre un compromiso verbal sólido y una mera intención del interesado es difusa, y ambos suelen computarse de manera indistinta.</p>
+<p>Supóngase, con valores hipotéticos en base 100, una proyección de 100 y una realización de 70: la desviación es de 30 unidades. Si los egresos programados se calibraron sobre la cifra proyectada, el déficit resultante debe atenderse con otros recursos o permanece sin cubrir. El desvío se manifiesta de forma gradual, a medida que las cobranzas del período se apartan del cronograma previsto. Existe además un sesgo de optimismo en la formulación de estimaciones, que tiende a sobrevalorar los escenarios favorables. El contenido es de carácter general y no sustituye la valoración de un profesional habilitado respecto de la situación particular de cada entidad. La repetición de desvíos similares en períodos sucesivos sugiere un error sistemático de estimación y no una circunstancia aislada.</p>
+<h4>Qué mirar</h4>
+<ul><li>Desviación porcentual entre ingresos proyectados e ingresos efectivamente realizados</li><li>Grado en que los egresos programados dependen de la cifra proyectada</li><li>Respaldo documental o contractual de cada ingreso incluido en la proyección</li></ul>
+</article>
+</section>
+<section id="a9" class="lamina" aria-labelledby="a9-l a9-t">
+<article data-registro="llano" aria-labelledby="a9-l">
+<h3 id="a9-l"><span class="reg">Registro llano</span><span class="sr">: </span>El dinero que sobra de verdad</h3>
+<h4>El planteo</h4>
+<p>Después de apartar lo ajeno, lo prometido, lo guardado en objetos y lo que se pierde por el camino, queda una cifra mucho menor que la que mostraba la caja al principio. Ese resto es el dinero que realmente sobra. Pocas veces coincide con la impresión general. Este apartado describe cómo se llega a esa cifra y por qué suele sorprender, tanto cuando es chica como cuando es grande.</p>
+<h4>El desarrollo</h4>
+<p>El camino hacia el dinero sobrante se parece a vaciar una bolsa por etapas. Primero se descuenta lo que pertenece a otros, como los impuestos recibidos y los adelantos de clientes. Luego se resta lo que ya está prometido para próximos pagos. Después se considera lo que quedó convertido en mercadería o equipos, y por último lo que se escurrió sin explicación. Lo que resta al final es el sobrante. A diferencia del saldo de la cuenta, no se ve en ningún extracto: hay que calcularlo, y para eso hace falta reunir información que suele estar dispersa.</p>
+<p>En un ejemplo hipotético en base 100, si entraron 100, 20 eran ajenos, 30 estaban comprometidos, 25 se convirtieron en objetos y 5 se perdieron sin registro, el sobrante es 20. Es decir, la quinta parte de lo que parecía haber. Hay negocios donde el resultado es mayor de lo imaginado y otros donde es menor, pero casi nunca coincide con la intuición. Tampoco es una cifra fija: cambia cada semana, a medida que entran cobros y vencen pagos. El contenido es general; el tratamiento formal de cada partida varía según la normativa vigente en el país y debe consultarse con un contador público o profesional habilitado.</p>
+<h4>Qué mirar</h4>
+<ul><li>Cuánto queda después de apartar lo ajeno, lo prometido y lo guardado</li><li>Qué diferencia hay entre ese sobrante y el saldo de la cuenta</li><li>Cada cuánto cambia esa cifra durante el mes</li></ul>
+</article>
+<article data-registro="tecnico" aria-labelledby="a9-t">
+<h3 id="a9-t"><span class="reg">Registro técnico</span><span class="sr">: </span>Excedente de tesorería y resultado genuinamente disponible</h3>
+<h4>El planteo</h4>
+<p>El excedente real de una entidad es el remanente que subsiste una vez deducidos los fondos de terceros, las obligaciones exigibles, el capital inmovilizado y las fugas no registradas. Rara vez coincide con el saldo aparente de tesorería ni con el resultado contable del período. El apartado reconstruye la secuencia de deducciones y explica la brecha entre ambas lecturas. El tratamiento es descriptivo y carece de valor prescriptivo.</p>
+<h4>El desarrollo</h4>
+<p>La determinación del excedente genuino procede por sustracciones sucesivas sobre el efectivo bruto. Se excluyen primero los pasivos fiduciarios y los anticipos recibidos; luego, las obligaciones exigibles a corto plazo; enseguida, las aplicaciones a activos de realización diferida; por último, las diferencias de caja sin explicación. El remanente así obtenido difiere tanto del saldo de tesorería como de la utilidad devengada, y no figura en ningún estado de manera directa.</p>
+<p>Con una hipótesis de base 100, un ingreso de 100 del que se deducen 20 de fondos ajenos, 30 de compromisos, 25 de capital inmovilizado y 5 de fugas arroja un excedente de 20, equivalente a una quinta parte del monto inicial. El valor puede resultar superior o inferior al percibido intuitivamente, pero rara vez le es igual. Se trata, además, de una magnitud dinámica, que se recalcula con cada cobranza y con cada vencimiento sucesivo. Su estimación requiere consolidar información proveniente de registros que habitualmente se llevan por separado. Este contenido es de carácter general; el tratamiento formal depende de la normativa vigente en el país y corresponde su consulta con un contador público o profesional habilitado. Su cálculo sistemático, aunque infrecuente en las unidades de menor escala, constituye el único modo de conocer la liquidez efectivamente libre.</p>
+<h4>Qué mirar</h4>
+<ul><li>Remanente tras la deducción de fondos de terceros, compromisos y capital inmovilizado</li><li>Brecha entre el excedente calculado y el saldo aparente de tesorería</li><li>Frecuencia de recálculo del excedente conforme a cobranzas y vencimientos</li></ul>
+</article>
+</section>
+<section id="a10" class="lamina" aria-labelledby="a10-l a10-t">
+<article data-registro="llano" aria-labelledby="a10-l">
+<h3 id="a10-l"><span class="reg">Registro llano</span><span class="sr">: </span>El dinero del mes que viene</h3>
+<h4>El planteo</h4>
+<p>El mes próximo empieza con lo que dejó este. Los cobros que quedaron sin concretarse llegarán o no llegarán, los pagos prometidos vencerán en su fecha y el sobrante, si lo hubo, será el punto de partida. Por eso el dinero de mañana no es una hoja en blanco, sino una continuación. Este apartado cuenta cómo se enlazan un mes con otro y por qué conviene mirarlos juntos.</p>
+<h4>El desarrollo</h4>
+<p>Lo que ocurre a fin de mes determina el principio del siguiente. Una venta no cobrada pasa de un mes al otro como una promesa; un pago vencido que se corrió unos días vuelve a presentarse con la misma fuerza. El saldo con que se cierra el mes se convierte en lo primero que hay para empezar el próximo. Así, los meses se encadenan, y un desajuste chico al final de uno puede crecer en el siguiente, igual que una grieta que se agranda al pasar de una pared a otra.</p>
+<p>Un ejemplo hipotético en base 100 ayuda a verlo. Si un mes cierra con 20 de sobrante, 40 de cobros sin concretar y 50 de pagos que vencen la primera semana del siguiente, el mes nuevo arranca con 20 más 40 menos 50, es decir, 10, siempre que los cobros lleguen a tiempo. Basta que se demoren y la cifra pasa a ser negativa durante un tramo. Por eso se acostumbra mirar un mes como parte de una serie, y no como una foto aislada. Este contenido es general y no constituye asesoría. La manera formal de tratar cada concepto cambia según la normativa del país, y para conocerla hay que acudir a un contador público o profesional habilitado.</p>
+<h4>Qué mirar</h4>
+<ul><li>Con cuánto empieza el mes nuevo después de cerrar el anterior</li><li>Qué cobros y qué pagos pasan de un mes al siguiente</li><li>Qué pasaría con el saldo si un cobro grande se demora</li></ul>
+</article>
+<article data-registro="tecnico" aria-labelledby="a10-t">
+<h3 id="a10-t"><span class="reg">Registro técnico</span><span class="sr">: </span>Proyección del flujo de caja del período siguiente</h3>
+<h4>El planteo</h4>
+<p>El flujo del período siguiente no se origina en una situación neutra: hereda saldos, cobranzas diferidas y obligaciones trasladadas desde el período anterior. La proyección de caja parte, entonces, de la posición de cierre y de los calendarios de vencimientos de ambos signos. El apartado describe esa continuidad y la sensibilidad de la proyección frente a pequeñas desviaciones iniciales. El enfoque es analítico y no pronóstico.</p>
+<h4>El desarrollo</h4>
+<p>La proyección de caja de un período se construye a partir de la posición de cierre del anterior, a la que se incorporan las cobranzas previstas y se deducen los egresos con vencimiento en el lapso proyectado. Los saldos por cobrar, las partidas diferidas y las obligaciones trasladadas operan como condicionantes iniciales que acotan el margen de maniobra del ejercicio entrante, con independencia de la actividad que se desarrolle en él.</p>
+<p>En términos hipotéticos de base 100, un cierre con excedente de 20, cobranzas por percibir de 40 y vencimientos de 50 en la primera semana arroja una posición proyectada de 10, siempre que las cobranzas se perciban en término. Un retraso en ellas desplaza la posición a valores negativos durante el intervalo de demora. La sensibilidad de la proyección respecto de pequeñas desviaciones iniciales es, por lo tanto, elevada, y las discrepancias se propagan de un período a otro. La lectura en serie, y no por cortes aislados, permite apreciar esa dinámica. El contenido es de carácter general y no configura asesoría; el tratamiento formal depende de la normativa vigente en el país y debe consultarse con un contador público o profesional habilitado. Cada período proyectado hereda así las imprecisiones del anterior, de manera que el horizonte de confianza se reduce a medida que se extiende.</p>
+<h4>Qué mirar</h4>
+<ul><li>Posición de cierre del período anterior como base de la proyección</li><li>Calendario de cobranzas esperadas y de vencimientos del lapso proyectado</li><li>Sensibilidad de la posición proyectada frente a demoras en las cobranzas</li></ul>
+</article>
+</section>
+<section id="glosario" class="lamina" aria-labelledby="t-glosario">
+<h2 id="t-glosario">Glosario puente</h2>
+<table>
+<caption>De la palabra corriente al término técnico: doce equivalencias</caption>
+<thead><tr><th scope="col">Palabra corriente</th><th scope="col">Término técnico</th></tr></thead>
+<tbody><tr><th scope="row">El dinero que falta cobrar</th><td>Cuentas por cobrar</td></tr><tr><th scope="row">El adelanto que dejó un cliente</th><td>Anticipos recibidos</td></tr><tr><th scope="row">El dinero de otros que pasa por la caja</th><td>Fondos de terceros</td></tr><tr><th scope="row">Lo que se tarda en cobrar una venta</th><td>Plazo medio de cobranza</td></tr><tr><th scope="row">Lo que ya se prometió pagar</th><td>Obligaciones exigibles</td></tr><tr><th scope="row">El dinero guardado en mercadería</th><td>Existencias</td></tr><tr><th scope="row">Las herramientas y las máquinas</th><td>Bienes de uso</td></tr><tr><th scope="row">La plata que se gasta y no vuelve</th><td>Costos irrecuperables</td></tr><tr><th scope="row">La plata que se escurre sin dejar rastro</th><td>Fugas de efectivo</td></tr><tr><th scope="row">El faltante que nadie explica</th><td>Diferencias de caja</td></tr><tr><th scope="row">Lo que se esperaba vender</th><td>Ingresos proyectados</td></tr><tr><th scope="row">Lo que sobra de verdad</th><td>Excedente</td></tr></tbody>
+</table>
+</section>
+<section id="cierre" class="lamina" aria-labelledby="t-cierre">
+<h2 id="t-cierre">Las diez formas en que el dinero de un negocio no está donde parece</h2>
+<p>Los diez apartados anteriores parecen tratar de asuntos distintos: cobros por llegar, dinero ajeno, compromisos, mercadería, cargos automáticos, salidas sin registro, reposiciones, expectativas, sobrantes y meses por venir. Sin embargo, todos describen una sola situación vista desde diez ángulos. En cada uno, la cifra que se ve en un momento dado, ya sea el saldo de una cuenta, el total de una caja o el monto de una venta, no coincide con lo que ese dinero es en realidad. La diferencia puede deberse al tiempo, a la propiedad, a un compromiso previo, a la forma que tomó el dinero o a la falta de un registro.</p>
+<p>El primer rasgo común es el tiempo. El dinero que todavía no llegó, el que se espera y no llega, y el del mes que viene son maneras de nombrar la distancia entre un hecho y su efecto en la caja. Una venta ocurre un día y se cobra otro; un gasto se decide en un momento y se paga en otro; una expectativa se forma antes de que haya un solo dato. El negocio vive en un presente de caja, pero está hecho de acontecimientos que se escalonan en el calendario. Mirar solo el hoy deja fuera casi todo lo que explica el mañana.</p>
+<p>El segundo rasgo es la propiedad. El dinero que llegó y no es del negocio, y el que ya tiene destino antes de gastarse, muestran que tener un saldo no es lo mismo que poder disponer de él. Una parte pertenece a otros y otra está reservada por promesas anteriores. Ambas conviven en el mismo lugar con el dinero propio y no se distinguen a simple vista. El tercer rasgo es la forma: el dinero que se convirtió en cosas y el que se repone muestran que el valor puede persistir sin ser líquido, y que ciertos gastos regresan mientras otros se consumen.</p>
+<p>El cuarto rasgo es la falta de registro. El dinero que se va sin que nadie lo decida y el que sale por la puerta de atrás tienen en común que no dejan huella en el momento en que ocurren. No requieren mala intención; requieren apenas que nadie haya anotado el movimiento. Lo que no se anota no se puede discutir, y lo que no se puede discutir tiende a repetirse. El dinero que sobra de verdad es, en cierto modo, el resultado de restar todo lo anterior, y por eso es la cifra que menos se ve y más sorprende.</p>
+<p>Conviene ser claro sobre los límites de lo expuesto. Primero, el contenido es general. No describe ningún negocio en particular ni sirve como diagnóstico, y no puede decir cuánto dinero tiene o le falta a nadie. Segundo, los ejemplos numéricos son hipotéticos y se expresan en base 100 o en unidades únicamente para ilustrar proporciones; no representan montos reales ni promedios de ninguna actividad. Tercero, los diez apartados no agotan las formas en que el dinero cambia de lugar o de naturaleza: son una clasificación entre varias posibles, y otras personas podrían agrupar los fenómenos de otro modo. Una clasificación distinta cambiaría los títulos, pero difícilmente cambiaría la observación central.</p>
+<p>Hay además una limitación de método que conviene reconocer: describir un fenómeno en general siempre implica dejar de lado los detalles que lo hacen particular. Un negocio con ventas casi siempre al contado vive la mayoría de estos apartados de forma muy distinta de otro que vende con plazos largos, y uno con mucha mercadería no se parece a uno que presta un servicio. Los apartados describen tendencias de la lógica del dinero, no regularidades garantizadas, y cualquier lector que reconozca en ellos su propia experiencia debe tomarlo como una coincidencia ilustrativa y no como una confirmación.</p>
+<p>Cuarto, el tratamiento formal de cada concepto, es decir, la manera en que se registra, se mide, se informa y se trata frente a las obligaciones que correspondan, varía según la normativa vigente en el país y puede cambiar con el tiempo. Este sitio no lo describe ni lo interpreta. Cualquier decisión concreta sobre un negocio requiere la consulta con un contador público o profesional habilitado, que conozca la situación completa y las reglas aplicables. Quinto, los dos registros tienen el mismo valor informativo; elegir uno u otro es cuestión de comodidad de lectura y no de profundidad.</p>
+<p>Finalmente, vale aclarar lo que este sitio no hace. No presta servicios de manejo de dinero de terceros de ninguna clase, no emite diagnósticos y no ofrece asesoría individual de carácter contable, tributario o legal. Su función es exclusivamente informativa: ofrecer un vocabulario ordenado para hablar de un fenómeno cotidiano. Si al terminar la lectura queda la impresión de que el dinero de un negocio casi nunca está donde parece, la lectura cumplió su propósito. Qué hacer con esa impresión es una cuestión que cada persona resuelve con la información y el acompañamiento profesional que correspondan a su caso.</p>
+<p class="fechas">Publicado el <time datetime="2026-10-15">15 de octubre de 2026</time>. Última revisión el <time datetime="2026-10-15">15 de octubre de 2026</time>.</p>
+</section>
+<section id="nosotros" class="lamina" aria-labelledby="t-nosotros">
+<h2 id="t-nosotros">Nosotros</h2>
+<p>dinfut (dominio dinfut.blog) es editado por DANIEL EBERTO RAMIREZ RODRIGUEZ, con domicilio comercial en Av. Corrientes 1669, C1042AAC Cdad. Autónoma de Buenos Aires, Argentina. Quien edita es responsable de la selección de los temas, de la redacción de ambos registros y de la revisión de cada publicación. El sitio no forma parte de una firma contable, de una entidad financiera ni de una consultora.</p>
+<p>El contenido se elabora en dos registros que se escriben por separado. Primero se define la lista de puntos que cada apartado debe cubrir; luego se redacta el registro llano con palabras corrientes y el registro técnico con terminología de la administración, sin traducir uno desde el otro. Antes de publicar se compara que ambos cubran los mismos puntos, que tengan una extensión equivalente y que ninguno funcione como resumen del otro.</p>
+<p>Los errores se corrigen cuando se detectan. Quien encuentre una imprecisión, una frase confusa o una diferencia de contenido entre los dos registros puede escribir a soporte@dinfut.blog indicando el apartado y el registro. La corrección se publica en un plazo razonable y se deja constancia de la revisión con su fecha en el cierre del sitio.</p>
+<p>El sitio se financia con publicidad de terceros que se muestra en sus páginas. Esa publicidad no condiciona el contenido, no se presenta como recomendación de quien edita y se ubica fuera de los apartados, del glosario y de los documentos legales. El acceso al contenido es gratuito.</p>
+<p>La actividad de este sitio se limita a la divulgación de información general. No presta intermediación financiera, no capta dinero, no asesora sobre inversiones, no concede créditos y no ofrece diagnósticos ni asesoría contable, tributaria o legal individual. Tampoco responde consultas sobre casos particulares.</p>
+<h3>Ficha del sitio</h3>
+<dl class="ficha"><div><dt>Nombre del sitio</dt><dd>dinfut</dd></div><div><dt>Titular / razón social</dt><dd>DANIEL EBERTO RAMIREZ RODRIGUEZ</dd></div><div><dt>Dominio</dt><dd>dinfut.blog</dd></div><div><dt>Correo de soporte</dt><dd>soporte@dinfut.blog</dd></div><div><dt>Dirección comercial</dt><dd>Av. Corrientes 1669, C1042AAC Cdad. Autónoma de Buenos Aires, Argentina</dd></div><div><dt>Teléfono</dt><dd>+54 11 4374-1730</dd></div><div><dt>País y ley de datos aplicable</dt><dd>Argentina — Ley N.º 25.326 de Protección de los Datos Personales</dd></div></dl>
+</section>
+<section id="contacto" class="lamina" aria-labelledby="t-contacto">
+<h2 id="t-contacto">Contacto</h2>
+<p>Los canales de contacto de dinfut son los que figuran a continuación. El sitio no responde consultas individuales sobre la situación de ningún negocio; los mensajes se leen para recibir correcciones, observaciones sobre el contenido y solicitudes vinculadas con los datos personales.</p>
+<dl class="ficha"><div><dt>Titular</dt><dd>DANIEL EBERTO RAMIREZ RODRIGUEZ</dd></div><div><dt>Dirección comercial</dt><dd>Av. Corrientes 1669, C1042AAC Cdad. Autónoma de Buenos Aires, Argentina</dd></div><div><dt>Correo</dt><dd>soporte@dinfut.blog</dd></div><div><dt>Teléfono</dt><dd>+54 11 4374-1730</dd></div><div><dt>Dominio</dt><dd>dinfut.blog</dd></div></dl>
+<p>Este formulario no envía nada por sí mismo: al pulsar el botón se abre el programa de correo del visitante con el mensaje ya redactado. No se responden consultas individuales.</p>
+<form id="form-contacto" action="mailto:soporte@dinfut.blog" method="post" enctype="text/plain" autocomplete="off" data-destino="soporte@dinfut.blog" data-sitio="dinfut">
+<div><label class="campo" for="c-nombre">Nombre</label><input type="text" id="c-nombre" name="nombre" autocomplete="off" required minlength="2" aria-describedby="e-nombre"><p class="error" id="e-nombre" aria-live="polite"></p></div>
+<div><label class="campo" for="c-correo">Correo</label><input type="email" id="c-correo" name="correo" autocomplete="off" required aria-describedby="e-correo"><p class="error" id="e-correo" aria-live="polite"></p></div>
+<div><label class="campo" for="c-mensaje">Mensaje</label><textarea id="c-mensaje" name="mensaje" autocomplete="off" required minlength="10" aria-describedby="e-mensaje"></textarea><p class="error" id="e-mensaje" aria-live="polite"></p></div>
+<button type="submit" class="accion">Abrir mi programa de correo</button>
+</form>
+<p class="antiphishing">Aviso antiphishing: dinfut nunca solicita contraseñas, números de tarjeta, datos de cuentas bancarias ni documentos de identidad, ni por este formulario ni por correo. Si llega un mensaje que dice provenir de este sitio y pide esa información, debe tratarse como fraudulento. Los mensajes legítimos se envían solamente desde soporte@dinfut.blog.</p>
+</section>
+<section id="descargo" class="lamina" aria-labelledby="t-descargo">
+<h2 id="t-descargo">Descargo de responsabilidad</h2>
+<p>dinfut.blog, operado por DANIEL EBERTO RAMIREZ RODRIGUEZ, es un portal puramente informativo. Todo su contenido tiene carácter general y está destinado a la divulgación de ideas sobre lo que le ocurre al dinero de un negocio pequeño entre que entra y que se va.</p>
+<p>Los dos registros de lectura, el llano y el técnico, tienen el mismo valor informativo y cubren los mismos puntos. Ninguno de ellos constituye asesoría de ningún tipo, y ninguno debe leerse como definición legal o contable. Todos los ejemplos numéricos son hipotéticos y se expresan en base 100 o en unidades.</p>
+<p>dinfut no presta intermediación financiera, captación de dinero, asesoría de inversión personalizada ni concesión de créditos. Tampoco ofrece diagnósticos ni asesoría contable, tributaria o legal individual. El tratamiento formal de cada concepto varía según la normativa vigente en Argentina y debe consultarse con un contador público o profesional habilitado.</p>
+</section>
+<section id="politicas" class="lamina" aria-labelledby="t-politicas">
+<h2 id="t-politicas">Documentos legales</h2>
+<p>Los cuatro documentos se aplican a ambos registros por igual. Se despliegan al elegirlos.</p>
+<details id="privacidad">
+<summary>Política de Privacidad</summary>
+<div class="doc">
+<h3>Marco normativo</h3>
+<p>Esta Política de Privacidad se rige por la Ley N.º 25.326 de Protección de los Datos Personales de la República Argentina, su decreto reglamentario y las disposiciones de la autoridad de control. Su objeto es informar cómo se tratan los datos de quienes visitan dinfut.blog.</p>
+<h3>Responsable del tratamiento</h3>
+<p>El responsable es DANIEL EBERTO RAMIREZ RODRIGUEZ, con domicilio en Av. Corrientes 1669, C1042AAC Cdad. Autónoma de Buenos Aires, Argentina. El correo de contacto para toda cuestión vinculada con datos personales es soporte@dinfut.blog y el teléfono es +54 11 4374-1730.</p>
+<h3>Datos que se recogen</h3>
+<ul><li>Los datos que la persona escribe en el formulario de contacto: nombre, correo y mensaje. El formulario no envía nada por sí mismo; abre el programa de correo del visitante, y los datos llegan al responsable solo si el visitante envía ese mensaje.</li><li>Datos técnicos de navegación, como dirección IP, tipo de dispositivo y páginas vistas, que pueden ser recogidos por servicios de medición y de publicidad de terceros si el visitante los acepta en el aviso de cookies.</li><li>El registro de lectura elegido (llano o técnico) y la decisión sobre cookies, que se guardan en el almacenamiento local del navegador y no se transmiten a ningún servidor.</li></ul>
+<h3>Finalidad y base del tratamiento</h3>
+<p>Los datos del formulario se usan únicamente para recibir y atender la comunicación. Los datos técnicos se usan para medir el uso del sitio y para mostrar publicidad. La base del tratamiento es el consentimiento libre, expreso e informado del titular de los datos, conforme al artículo 5 de la Ley N.º 25.326.</p>
+<h3>Plazo de conservación</h3>
+<p>Los mensajes se conservan el tiempo necesario para atenderlos y, como máximo, veinticuatro meses desde el último intercambio. Los datos técnicos recogidos por terceros se conservan según las políticas de esos proveedores.</p>
+<h3>Terceros que intervienen</h3>
+<p>Intervienen el proveedor de alojamiento del sitio, el proveedor del servicio de correo y los proveedores de medición y publicidad, entre ellos Google, descrito en la Política de Cookies. Ninguno de ellos recibe datos del formulario salvo que el visitante los envíe por correo.</p>
+<h3>Transferencias fuera del país</h3>
+<p>Algunos proveedores de terceros pueden tratar datos en servidores ubicados fuera de Argentina. Esas transferencias se realizan conforme al artículo 12 de la Ley N.º 25.326 y a su normativa complementaria, con las garantías que correspondan.</p>
+<h3>Derechos de las personas</h3>
+<p>Toda persona puede ejercer los derechos de acceso, rectificación, actualización, supresión (cancelación) y oposición escribiendo a soporte@dinfut.blog e indicando su nombre y el derecho que ejerce. El acceso se responde dentro de los diez días corridos de recibida la solicitud; la rectificación, actualización o supresión, dentro de los cinco días hábiles. El acceso es gratuito en intervalos no inferiores a seis meses, salvo que se acredite un interés legítimo.</p>
+<p>La Agencia de Acceso a la Información Pública, en su carácter de órgano de control de la Ley N.º 25.326, tiene la atribución de atender las denuncias y reclamos de quienes resulten afectados en sus derechos por el incumplimiento de las normas de protección de datos personales.</p>
+<h3>Menores de edad</h3>
+<p>El sitio no se dirige a menores de dieciocho años y no recoge intencionalmente datos de ellos. Si se advierte que se recibió información de un menor, se elimina.</p>
+<h3>Seguridad</h3>
+<p>Se aplican medidas técnicas y organizativas razonables para proteger los datos contra acceso no autorizado, pérdida o alteración, conforme al artículo 9 de la Ley N.º 25.326. Ninguna medida elimina por completo el riesgo, de modo que no puede garantizarse una seguridad absoluta.</p>
+<h3>Cambios</h3>
+<p>Los cambios en esta política se publican en esta misma sección, con una nueva fecha de última actualización. Cuando el cambio sea sustancial se indicará de forma visible en el sitio.</p>
+<p>Última actualización: 15 de octubre de 2026.</p>
+</div>
+</details>
+<details id="terminos">
+<summary>Términos y Condiciones</summary>
+<div class="doc">
+<h3>Identificación del titular</h3>
+<p>El sitio dinfut.blog pertenece y es operado por DANIEL EBERTO RAMIREZ RODRIGUEZ, con domicilio en Av. Corrientes 1669, C1042AAC Cdad. Autónoma de Buenos Aires, Argentina, correo soporte@dinfut.blog y teléfono +54 11 4374-1730.</p>
+<h3>Objeto del sitio</h3>
+<p>El sitio ofrece contenido informativo y educativo de carácter general sobre lo que le ocurre al dinero de un negocio pequeño. No constituye asesoría de ninguna clase.</p>
+<h3>Gratuidad</h3>
+<p>El acceso y la lectura del contenido son gratuitos. El sitio no cobra por ninguna sección.</p>
+<h3>Usos permitidos y prohibidos</h3>
+<ul><li>Se permite leer el sitio, citarlo con atribución y enlazarlo.</li><li>Se prohíbe copiar el contenido íntegro para republicarlo, presentarlo como propio, alterarlo, usarlo para engañar a terceros o interferir con el funcionamiento del sitio.</li></ul>
+<h3>Propiedad intelectual</h3>
+<p>Los textos, la estructura y el motivo gráfico son obra del titular y están protegidos por la legislación sobre propiedad intelectual. No se concede ninguna licencia más allá de lo indicado en el apartado anterior.</p>
+<h3>Enlaces externos</h3>
+<p>El sitio puede incluir enlaces a páginas de terceros. El titular no controla esos sitios ni responde por su contenido o sus políticas.</p>
+<h3>Publicidad</h3>
+<p>El sitio muestra publicidad de terceros. Los anuncios no son recomendaciones del titular, y la relación entre el visitante y el anunciante es ajena al sitio.</p>
+<h3>Limitación de responsabilidad</h3>
+<p>El contenido es general y se ofrece tal como está. El titular no responde por decisiones tomadas a partir de su lectura ni por daños derivados de su uso, en la medida permitida por la ley. El tratamiento formal de cada concepto debe consultarse con un contador público o profesional habilitado.</p>
+<h3>Modificaciones</h3>
+<p>El titular puede modificar el contenido y estos términos. La versión vigente es la publicada en el sitio, con su fecha de actualización.</p>
+<h3>Legislación aplicable</h3>
+<p>Estos términos se rigen por las leyes de la República Argentina. Cualquier controversia se somete a los tribunales ordinarios competentes de la Ciudad Autónoma de Buenos Aires, sin perjuicio de los derechos que la normativa de defensa del consumidor reconozca a los usuarios.</p>
+<p>Última actualización: 15 de octubre de 2026.</p>
+</div>
+</details>
+<details id="cookies-legal">
+<summary>Política de Cookies</summary>
+<div class="doc">
+<h3>Qué son las cookies</h3>
+<p>Las cookies son pequeños archivos que un sitio guarda en el navegador para recordar información. Esta política explica cuáles pueden usarse en dinfut.blog.</p>
+<h3>Tipos de cookies</h3>
+<ul><li>Técnicas: necesarias para el funcionamiento del sitio. El sitio propio no instala cookies técnicas; usa el almacenamiento local del navegador para recordar el registro de lectura y la decisión sobre cookies, y esa información no se transmite a ningún servidor.</li><li>De medición: permiten conocer, de forma agregada, cuántas personas visitan el sitio y qué páginas ven. Solo se activan si el visitante las acepta.</li><li>Publicitarias de terceros: las instalan los proveedores de publicidad para mostrar anuncios. La publicidad de Google puede usar cookies para mostrar anuncios basados en las visitas previas a este y a otros sitios. Más información en <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">https://policies.google.com/technologies/partner-sites</a> y configuración de anuncios en <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">https://adssettings.google.com</a>.</li></ul>
+<h3>Consentimiento y revocación</h3>
+<p>Al entrar por primera vez se muestra un aviso con las opciones de aceptar y rechazar, y la decisión se guarda en el navegador. El consentimiento puede revocarse en cualquier momento borrando los datos del sitio desde la configuración del navegador, lo que hará que el aviso vuelva a mostrarse. Los navegadores permiten también bloquear o eliminar cookies de terceros.</p>
+<h3>Cambios</h3>
+<p>Esta política puede actualizarse; la fecha vigente figura al final de este texto.</p>
+<p>Última actualización: 15 de octubre de 2026.</p>
+</div>
+</details>
+<details id="descargo-legal">
+<summary>Descargo de Responsabilidad</summary>
+<div class="doc">
+<h3>Carácter informativo</h3>
+<p>dinfut.blog es un portal exclusivamente informativo, operado por DANIEL EBERTO RAMIREZ RODRIGUEZ. Lo publicado busca ordenar un vocabulario y describir fenómenos habituales, no resolver situaciones particulares.</p>
+<h3>Equivalencia de los registros</h3>
+<p>El registro llano y el registro técnico se redactaron para ofrecer la misma información. Ninguno es mejor ni más válido, y ninguno sustituye al otro. Ninguno de los dos constituye asesoría.</p>
+<h3>Lo que el sitio no hace</h3>
+<p>No realiza intermediación financiera, no capta dinero del público, no brinda asesoría de inversión personalizada ni otorga créditos. No emite diagnósticos ni brinda asesoría contable, tributaria o legal individual.</p>
+<h3>Ejemplos y cifras</h3>
+<p>Los ejemplos numéricos son hipotéticos, están expresados en base 100 o en unidades y no reflejan ninguna situación real.</p>
+<h3>Consulta profesional</h3>
+<p>El tratamiento formal de cada concepto depende de la normativa vigente en Argentina. Cualquier decisión debe consultarse con un contador público o profesional habilitado.</p>
+<p>Última actualización: 15 de octubre de 2026.</p>
+</div>
+</details>
+</section>
+</main>
+<footer class="pie">
+<div class="pie-in">
+<dl><div><dt>Nombre del sitio</dt><dd>dinfut</dd></div><div><dt>Titular / razón social</dt><dd>DANIEL EBERTO RAMIREZ RODRIGUEZ</dd></div><div><dt>Dominio</dt><dd>dinfut.blog</dd></div><div><dt>Correo de soporte</dt><dd>soporte@dinfut.blog</dd></div><div><dt>Dirección comercial</dt><dd>Av. Corrientes 1669, C1042AAC Cdad. Autónoma de Buenos Aires, Argentina</dd></div><div><dt>Teléfono</dt><dd>+54 11 4374-1730</dd></div><div><dt>País y ley de datos aplicable</dt><dd>Argentina — Ley N.º 25.326 de Protección de los Datos Personales</dd></div></dl>
+<ul><li><a href="#privacidad">Política de Privacidad</a></li><li><a href="#terminos">Términos y Condiciones</a></li><li><a href="#cookies-legal">Política de Cookies</a></li><li><a href="#descargo-legal">Descargo de Responsabilidad</a></li></ul>
+</div>
+</footer>
+<div id="aviso-cookies" class="cookies" role="dialog" aria-label="Aviso de cookies">
+<div class="cookies-in">
+<p>Este sitio usa el almacenamiento local de su navegador para recordar el registro de lectura y esta decisión, y puede mostrar publicidad de terceros que utiliza cookies. Puede aceptar o rechazar las cookies de medición y publicidad. Más información en la <a href="#cookies-legal">Política de Cookies</a>.</p>
+<div class="cookies-bt"><button type="button" class="accion" data-cookies="aceptar">Aceptar</button><button type="button" class="accion" data-cookies="rechazar">Rechazar</button></div>
+</div>
+</div>
+<script>
+(function () {
+  "use strict";
+  var doc = document;
+  doc.documentElement.classList.add("js");
+  var CLAVE_REG = "dinfut_registro";
+  var CLAVE_COOK = "dinfut_cookies";
+
+  function leer(clave) {
+    try { return window.localStorage.getItem(clave); } catch (e) { return null; }
+  }
+  function guardar(clave, valor) {
+    try { window.localStorage.setItem(clave, valor); } catch (e) { return false; }
+    return true;
+  }
+
+  var radios = {
+    llano: [doc.getElementById("r-llano"), doc.getElementById("b-llano")],
+    tecnico: [doc.getElementById("r-tecnico"), doc.getElementById("b-tecnico")]
+  };
+  if (leer(CLAVE_REG) === "tecnico" && radios.tecnico[0]) {
+    radios.tecnico[0].checked = true;
+  }
+  ["llano", "tecnico"].forEach(function (nombre) {
+    radios[nombre].forEach(function (el) {
+      if (!el) { return; }
+      el.addEventListener("change", function () {
+        if (el.checked) { guardar(CLAVE_REG, nombre); }
+      });
+    });
+  });
+
+  function abrirLegal() {
+    var id = decodeURIComponent(window.location.hash.slice(1));
+    if (!id) { return; }
+    var el = doc.getElementById(id);
+    if (el && el.tagName === "DETAILS") {
+      el.open = true;
+      el.scrollIntoView();
+    }
+  }
+  window.addEventListener("hashchange", abrirLegal);
+  abrirLegal();
+
+  var abiertosPorImpresion = [];
+  window.addEventListener("beforeprint", function () {
+    abiertosPorImpresion = [];
+    doc.querySelectorAll("details").forEach(function (d) {
+      if (!d.open) { d.open = true; abiertosPorImpresion.push(d); }
+    });
+  });
+  window.addEventListener("afterprint", function () {
+    abiertosPorImpresion.forEach(function (d) { d.open = false; });
+    abiertosPorImpresion = [];
+  });
+
+  var banner = doc.getElementById("aviso-cookies");
+  if (banner && !leer(CLAVE_COOK)) {
+    banner.classList.add("on");
+  }
+  if (banner) {
+    banner.querySelectorAll("button[data-cookies]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        guardar(CLAVE_COOK, b.getAttribute("data-cookies"));
+        banner.classList.remove("on");
+      });
+    });
+  }
+
+  var boton = doc.getElementById("menu-btn");
+  var menu = doc.getElementById("menu");
+  if (boton && menu) {
+    boton.addEventListener("click", function () {
+      var abierto = menu.classList.toggle("abierto");
+      boton.setAttribute("aria-expanded", abierto ? "true" : "false");
+    });
+    menu.addEventListener("click", function (ev) {
+      if (ev.target && ev.target.tagName === "A") {
+        menu.classList.remove("abierto");
+        boton.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  var form = doc.getElementById("form-contacto");
+  if (form) {
+    form.noValidate = true;
+    var campos = {
+      nombre: doc.getElementById("c-nombre"),
+      correo: doc.getElementById("c-correo"),
+      mensaje: doc.getElementById("c-mensaje")
+    };
+    var errores = {
+      nombre: doc.getElementById("e-nombre"),
+      correo: doc.getElementById("e-correo"),
+      mensaje: doc.getElementById("e-mensaje")
+    };
+    var ER_CORREO = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    var validar = function (clave) {
+      var campo = campos[clave];
+      var aviso = errores[clave];
+      if (!campo || !aviso) { return true; }
+      var valor = campo.value.trim();
+      var texto = "";
+      if (clave === "nombre" && valor.length < 2) {
+        texto = "Escriba su nombre (al menos dos caracteres).";
+      } else if (clave === "correo" && !ER_CORREO.test(valor)) {
+        texto = "Escriba una dirección de correo válida.";
+      } else if (clave === "mensaje" && valor.length < 10) {
+        texto = "El mensaje debe tener al menos diez caracteres.";
+      }
+      aviso.textContent = texto;
+      campo.setAttribute("aria-invalid", texto ? "true" : "false");
+      return texto === "";
+    };
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var correcto = ["nombre", "correo", "mensaje"].map(validar).every(Boolean);
+      if (!correcto) {
+        var primero = ["nombre", "correo", "mensaje"].filter(function (k) {
+          return campos[k] && campos[k].getAttribute("aria-invalid") === "true";
+        })[0];
+        if (primero) { campos[primero].focus(); }
+        return;
+      }
+      var destino = form.getAttribute("data-destino") || "";
+      var asunto = "Mensaje desde " + (form.getAttribute("data-sitio") || "el sitio");
+      var cuerpo = "Nombre: " + campos.nombre.value.trim() + "\nCorreo: " + campos.correo.value.trim() + "\n\n" + campos.mensaje.value.trim();
+      window.location.href = "mailto:" + destino + "?subject=" + encodeURIComponent(asunto) + "&body=" + encodeURIComponent(cuerpo);
+    });
+    Object.keys(campos).forEach(function (k) {
+      if (campos[k]) {
+        campos[k].addEventListener("blur", function () { validar(k); });
+      }
+    });
+  }
+}());
+</script>
+</body>
+</html>
